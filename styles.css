@@ -29,7 +29,7 @@ body {
 .site-header {
     background: var(--bg-color);
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -40,15 +40,15 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--text-light);
-    font-size: 0.95rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
     border-radius: 4px;
     transition: all 0.2s ease;
 }
@@ -231,30 +231,68 @@ h3 {
     margin-bottom: 3rem;
 }
 
+.paper-year-group {
+    margin-bottom: 2rem;
+}
+
+.paper-year-header {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    padding: 0.3rem 1rem;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.05));
+    border-radius: 20px;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
 .paper-list {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 0.75rem;
 }
 
 .paper-item {
     display: flex;
-    gap: 0.75rem;
-    padding: 0.4rem;
-    background: var(--bg-light);
-    border-radius: 6px;
-    transition: all 0.2s ease;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+    position: relative;
+}
+
+.paper-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent-color);
+    border-radius: 8px 0 0 8px;
+    opacity: 0.6;
+    transition: opacity 0.25s ease;
 }
 
 .paper-item:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+.paper-item:hover::before {
+    opacity: 1;
 }
 
 .paper-year {
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent-color);
-    min-width: 40px;
+    min-width: 45px;
+    padding-top: 0.1rem;
 }
 
 .paper-content {
@@ -262,39 +300,49 @@ h3 {
 }
 
 .paper-title {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--primary-color);
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.5;
+    font-weight: 500;
 }
 
 .paper-authors {
     font-size: 0.8rem;
     color: var(--text-color);
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.25rem;
 }
 
 .paper-venue {
+    display: inline-block;
     font-size: 0.75rem;
-    color: var(--text-light);
-    margin-bottom: 0.1rem;
+    color: #7f8c8d;
+    background: #f8f9fa;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.35rem;
 }
 
 .paper-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
+    margin-top: 0.35rem;
 }
 
 .paper-link {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--accent-color);
     text-decoration: none;
-    padding: 0.25rem 0;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    font-weight: 500;
 }
 
 .paper-link:hover {
-    border-bottom-color: var(--accent-color);
+    background: var(--accent-color);
+    color: #fff;
 }
 
 /* About */
@@ -408,10 +456,10 @@ h3 {
 /* Footer */
 .site-footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     border-top: 1px solid var(--border-color);
     color: var(--text-light);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* Profile Card Layout */
@@ -458,11 +506,11 @@ h3 {
 .contact-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     color: var(--accent-color);
     text-decoration: none;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
     background: var(--bg-light);
     border-radius: 4px;
     transition: all 0.2s ease;
@@ -559,6 +607,7 @@ h3 {
 @media (max-width: 768px) {
     .profile-card {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .profile-left {
@@ -566,7 +615,7 @@ h3 {
     }
 
     .name {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .paper-item {
@@ -576,5 +625,14 @@ h3 {
 
     .nav {
         gap: 1rem;
+    }
+
+    .main-content {
+        padding: 1rem 1.25rem;
+    }
+
+    .profile-left .profile-photo {
+        width: 120px;
+        height: 120px;
     }
 }
