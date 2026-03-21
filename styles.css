@@ -303,6 +303,7 @@ h3 {
     align-items: baseline;
     gap: 0.25rem;
     line-height: 1.6;
+    white-space: nowrap;
 }
 
 .paper-content .paper-title::after {
@@ -349,6 +350,7 @@ h3 {
     padding: 0.15rem 0.5rem;
     border-radius: 4px;
     margin-left: 0.5rem;
+    white-space: nowrap;
 }
 
 .paper-links {
