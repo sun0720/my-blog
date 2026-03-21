@@ -414,16 +414,154 @@ h3 {
     font-size: 0.9rem;
 }
 
+/* Profile Card Layout */
+.profile-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.profile-left {
+    text-align: center;
+    position: sticky;
+    top: 100px;
+}
+
+.profile-left .photo-container {
+    margin-bottom: 1.5rem;
+}
+
+.profile-left .profile-photo {
+    width: 180px;
+    height: 180px;
+}
+
+.profile-name h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: 2px;
+}
+
+.profile-name .title {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-light);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.profile-right {
+    padding-top: 1rem;
+}
+
+.profile-right h2 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.intro-section {
+    margin-bottom: 2rem;
+}
+
+.intro-section p {
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.edu-section {
+    margin-bottom: 2rem;
+}
+
+.edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.edu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.edu-item .degree {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.edu-item .school {
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.edu-item .time {
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.research-section {
+    margin-bottom: 2rem;
+}
+
+.research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.profile-right .quick-links {
+    justify-content: flex-start;
+    margin-top: 2rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    .about-grid {
+    .profile-card {
         grid-template-columns: 1fr;
     }
 
-    .about-photo {
+    .profile-left {
         position: static;
-        max-width: 200px;
-        margin: 0 auto;
     }
 
     .name {
