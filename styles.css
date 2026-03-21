@@ -262,7 +262,7 @@ h3 {
     border-radius: 4px;
     transition: all 0.2s ease;
     position: relative;
-    align-items: baseline;
+    align-items: center;
 }
 
 .paper-item::before {
